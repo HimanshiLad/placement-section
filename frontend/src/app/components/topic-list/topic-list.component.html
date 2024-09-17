@@ -1,0 +1,21 @@
+
+<app-addQuestion #Form></app-addQuestion>
+
+<div class="container">
+  <h2>Online Assessment</h2>
+  <ul>
+    <li *ngFor="let item of topics" (click)="navigateToQuestionList()">{{ item.name }}</li>
+  </ul>
+  <button (click)="Form.openForm()">Add Questions</button>
+  <h2>Interview</h2>
+  <ul>
+    <li *ngFor="let item of topics" (click)="navigateToQuestionList()">{{ item.name }}</li>
+  </ul>
+  <button (click)="Form.openForm()">Add Questions</button>
+  <h2>Written Test</h2>
+  <ul>
+    <li *ngFor="let item of topics" (click)="navigateToQuestionList()">{{ item.name }}</li>
+  </ul>
+  <button (click)="Form.openForm()">Add Questions</button>
+</div>
+

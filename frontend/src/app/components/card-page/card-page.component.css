@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.section {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the cards align horizontally inside the section */
+.section .card-container {
+  display: flex;
+  justify-content: flex-start;  /* Align items to the left */
+  flex-wrap: wrap;              /* Allow wrapping if cards overflow */
+  gap: 16px;                    /* Space between cards */
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+/* App-card styling to keep spacing and inline block */
+.section app-card {
+  display: inline-block;
+  margin: 10px;
+  flex: 1 1 200px;              /* Make the cards responsive */
+  max-width: 200px;             /* Define max-width for each card */
+}
+
+.edit_square-icon {
+  position: absolute;
+  top: 40px; 
+  right: 20px; 
+  color: #757272;
+  cursor: pointer;
+  font-size: 25px; 
+  transition: color 0.3s ease;
+}
+
+.edit_square-icon:hover {
+  color: #000;
+}
