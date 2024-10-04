@@ -12,7 +12,11 @@ public class InternshipTopicService {
     @Autowired
     private InternshipTopicRepo repository;
 
-    public List<InternshipTopicEntity> getTopicList(Long company) {
-        return repository.findById(company);
+    public List<InternshipTopicEntity> findByCompanyId(Long companyId) {
+        return repository.findByCompanyId(companyId);
+    }
+     public InternshipTopicEntity saveTopic(InternshipTopicEntity topic) {
+        return repository.save(topic);
     }
 }
+

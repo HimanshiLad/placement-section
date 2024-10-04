@@ -1,6 +1,5 @@
 package sgsits.cse.dis.placement.placement_section.entity;
 
-
 import jakarta.persistence.Column;
 
 // import org.springframework.data.annotation.Id;
@@ -30,7 +29,12 @@ public class companyInfoEntity {
     @Column(name = "description")
     private String description;
 
+    // @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
+    // @JsonManagedReference 
+    // private List<InternshipTopicEntity> topics;
+
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -58,4 +62,12 @@ public class companyInfoEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    // public List<InternshipTopicEntity> getTopics() {
+    //     return topics;
+    // }
+
+    // public void setTopics(List<InternshipTopicEntity> topics) {
+    //     this.topics = topics;
+    // }
 }

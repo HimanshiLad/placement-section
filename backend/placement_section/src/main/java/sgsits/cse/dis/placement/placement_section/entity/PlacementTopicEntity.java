@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "internship_topics")
-public class InternshipTopicEntity {
+@Table(name = "placement_topics")
+public class PlacementTopicEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class InternshipTopicEntity {
     @Column(name = "company_id")
     private int companyId;
 
-    public InternshipTopicEntity() {}
+    public PlacementTopicEntity() {}
 
     // Getters and Setters
     public Long getId() {
@@ -60,7 +60,7 @@ public class InternshipTopicEntity {
     }
 
     // Constructor
-    public InternshipTopicEntity(String name, String category, int companyId) { // Corrected constructor
+    public PlacementTopicEntity(String name, String category, int companyId) { // Corrected constructor
         this.name = name;
         this.category = category;
         this.companyId = companyId;

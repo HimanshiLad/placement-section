@@ -10,5 +10,4 @@ public class PlacementSectionApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PlacementSectionApplication.class, args);
 	}
-
 }

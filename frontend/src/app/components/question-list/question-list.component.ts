@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../data.service';
+
+export interface question{
+  question: string;
+  topicId: number;
+  }
 
 @Component({
   selector: 'app-question-list',
@@ -10,11 +16,19 @@ import { DataService } from '../../data.service';
   styleUrl: './question-list.component.css'
 })
 export class QuestionListComponent implements OnInit{
-  data: any[] = [];
-  constructor(private dataService: DataService) {}
-  
-  ngOnInit(): void {
-    this.data = this.dataService.getQuestionList();
+  Question: question[] = [];
+  topicId: number = 0;
+
+  constructor(private dataService: DataService, private route: ActivatedRoute) {}
+
+ ngOnInit(): void {
+     this.topicId = this.route.snapshot.params['topicId'];
+     this.fetchQuestions(this.topicId)
+ } 
+  fetchQuestions(topicId: number): void {
+    this.dataService.getQuestionsByTopicId(topicId).subscribe((Question:question[]) => {
+      this.Question = Question;
+  });
   }
 
 }
